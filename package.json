@@ -1,0 +1,25 @@
+{
+  "name": "haroo-kit",
+  "version": "0.0.1",
+  "description": "web publish tool for haroonote",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soomtong/haroo-kit.git"
+  },
+  "keywords": [
+    "haroonote"
+  ],
+  "author": "soomtong@gmail.com",
+  "license": "Apache License",
+  "bugs": {
+    "url": "https://github.com/soomtong/haroo-kit/issues"
+  },
+  "homepage": "https://github.com/soomtong/haroo-kit",
+  "dependencies": {
+    "express": "^4.10.4"
+  }
+}
