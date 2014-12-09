@@ -8,11 +8,31 @@ var packages = require('../package.json'),
 
 var checks = {
     check: function check() {
+        this.config();
         this.packages();
         this.contentPath();
         this.sqlite();
     },
 
+    // Config file
+    config: function checkConfigFile() {
+        var configFile = configFilePath,
+            fd,
+            errorHeader = 'ERROR: Unable to access harookit\'s config file:',
+            errorHelp = 'Check that the file exists and file system permissions are correct.';
+
+        // Check the root content path
+        try {
+            fd = fs.openSync(configFile, 'r');
+            fs.closeSync(fd);
+        } catch (e) {
+            console.error(errorHeader);
+            console.error('  ' + e.message);
+            console.error('\n' + errorHelp);
+
+            process.exit(0);
+        }
+    },
     // Make sure package.json dependencies have been installed.
     packages: function checkPackages() {
         if (mode !== 'production' && mode !== 'development') {
