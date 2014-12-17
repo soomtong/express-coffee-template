@@ -2,7 +2,7 @@
 	"ignore": [
 		"*.test.js",
 		"fixtures/*",
-		"client/components/*",
+		"public/components/*",
 		"node_modules/*"
 	]
 }
