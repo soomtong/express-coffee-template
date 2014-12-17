@@ -1,8 +1,18 @@
-exports.server = function serverConfig(mode) {
+exports.server = function serverConfig(option) {
     var config = {
-        port: 3032
+        'production': {
+            port: 3032
+        },
+        'development': {
+            port: 3032
+        }
     };
 
-    return config
+    return config[option.mode];
 };
 
+exports.database = function databaseConfig(option) {
+    var config = {};
+
+    return config[option.mode];
+};
