@@ -1,0 +1,8 @@
+{
+	"ignore": [
+		"*.test.js",
+		"fixtures/*",
+		"client/components/*",
+		"node_modules/*"
+	]
+}

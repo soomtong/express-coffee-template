@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/soomtong/haroo-kit",
   "dependencies": {
-    "express": "^4.10.4"
+    "express": "^4.10.4",
+    "restify": "^2.8.4",
+    "socket.io": "^1.2.1"
   }
 }
