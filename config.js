@@ -1,4 +1,6 @@
-exports.server = function serverConfig(option) {
+var SERVICE_NAME = 'harookit';
+
+var server = function serverConfig(option) {
     var config = {
         'production': {
             port: 3032
@@ -11,8 +13,18 @@ exports.server = function serverConfig(option) {
     return config[option.mode];
 };
 
-exports.database = function databaseConfig(option) {
+var database = function databaseConfig(option) {
     var config = {};
 
     return config[option.mode];
+};
+
+module.exports = {
+    get: function getConfiguration(option) {
+        return {
+            name: SERVICE_NAME,
+            server: server(option),
+            database: database(option)
+        };
+    }
 };
