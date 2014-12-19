@@ -2,6 +2,7 @@
 var path = require('path');
 
 var SERVICE_NAME = 'harookit';
+var SERVICE_FOLDER = __dirname;
 
 var server = function serverConfig(option) {
     var config = {
@@ -45,6 +46,7 @@ module.exports = {
     get: function getConfiguration(option) {
         return {
             name: SERVICE_NAME,
+            root: SERVICE_FOLDER,
             server: server(option),
             database: database(option)
         };
