@@ -4,8 +4,7 @@
   "description": "web publish tool for haroonote",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,11 +20,7 @@
   },
   "homepage": "https://github.com/soomtong/haroo-kit",
   "dependencies": {
-    "express": "^4.10.4",
-    "request": "^2.49.0"
-  },
-  "devDependencies": {
-    "mocha": "^2.0.1",
-    "should": "^4.3.1"
+    "restify": "^2.8.4",
+    "socket.io": "^1.2.1"
   }
 }
