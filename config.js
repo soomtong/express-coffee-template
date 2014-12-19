@@ -1,4 +1,5 @@
 "use strict";
+
 var path = require('path');
 
 var SERVICE_NAME = 'harookit';
@@ -24,31 +25,34 @@ var server = function serverConfig(option) {
 var database = function databaseConfig(option) {
     var config = {
         'production': {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/harookit.db')
-            },
-            debug: false
+            client: 'file',
+            dir: path.join(__dirname, '/content/data/'),
+            file: {
+                user: 'harookit-users',
+                log: 'harookit-logs'
+            }
         },
         'development': {
-            client: 'sqlite3',
-            connection: {
-                filename: path.join(__dirname, '/content/data/harookit.db')
-            },
-            debug: false
+            client: 'file',
+            dir: path.join(__dirname, '/content/data/'),
+            file: {
+                user: 'harookit-users',
+                log: 'harookit-logs'
+            }
+        },
+        'testing': {
+            client: 'memory'
         }
     };
 
     return config[option.mode];
 };
 
-module.exports = {
-    get: function getConfiguration(option) {
-        return {
-            name: SERVICE_NAME,
-            root: SERVICE_FOLDER,
-            server: server(option),
-            database: database(option)
-        };
-    }
+exports.get = function getConfiguration(option) {
+    return {
+        name: SERVICE_NAME,
+        root: SERVICE_FOLDER,
+        server: server(option),
+        database: database(option)
+    };
 };
