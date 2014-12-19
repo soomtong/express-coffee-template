@@ -1,4 +1,6 @@
-var mode = process.env['NODE_ENV'] || 'development';
+"use strict";
+
+var mode = process.env.NODE_ENV || 'development';
 
 var config = require('./config').get({mode: mode});
 var harookit = require('./lib');

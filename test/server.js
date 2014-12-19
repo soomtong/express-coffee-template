@@ -1,10 +1,12 @@
+"use strict";
+
 var should          = require('should'),
     request         = require('request'),
     config          = require('../config');
 
 describe('Server', function () {
-    var port = config['testing'].server.port,
-        host = config['testing'].server.host,
+    var port = config.get({mode: 'testing'}).server.port,
+        host = config.get({mode: 'testing'}).server.host,
         url = 'http://' + host + ':' + port;
 
     it('should not start a connect server when required', function (done) {
