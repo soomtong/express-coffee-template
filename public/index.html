@@ -4,101 +4,106 @@
     <meta charset="UTF-8">
     <title>Harookit</title>
     <link rel="stylesheet" href="components/semantic/dist/semantic.min.css"/>
-    <style>
-        .masthead {
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding: 0em;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
-            border-bottom: none;
-
-            background-color: #00B5AD;
-            background-position: 50% 50%;
-            background-image: -webkit-radial-gradient(farthest-corner, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95));
-            background-image: radial-gradient(farthest-corner, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95));
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-
-            -ms-transition: background-color 3s ease-in-out 1s;
-            -moz-transition: background-color 3s ease-in-out 1s;
-            -webkit-transition: background-color 3s ease-in-out 1s;
-            transition: background-color 3s ease-in-out 1s;
-        }
-        .masthead .grid {
-            margin: 0em;
-            padding: 15rem 0em;
-        }
-        .library {
-            display: block;
-            font-size: 1.75em;
-            color: #FFFFFF;
-            font-weight: bold;
-        }
-        @media only screen and (max-width: 600px) {
-            .masthead .grid {
-                padding: 6rem 0rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style/harookit.css"/>
 </head>
-<body id="home">
-<div class="masthead">
+<body>
+
+<script type="text/x-handlebars">
+    <div>
+        {{outlet}}
+    </div>
+</script>
+<script type="text/x-handlebars" data-template-name="masthead">
+    <div class="masthead">
+        <div class="ui page grid">
+            <div class="center aligned column">
+                <div class="introduction">
+                    <h1 class="ui inverted header">
+                        <span class="library">Haroo-kit</span>
+                        <span class="text">web presenter for the haroonote.</span>
+                    </h1>
+                    <a class="ui black version label transition visible" href="">0.0.1</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/x-handlebars" data-template-name="articles">
+
+    <div class="ui very relaxed items">
+        <div class="item">
+            <div class="content">
+                <a class="ui header" href="#link">Title 1</a>
+                <div class="description">
+                    <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris. Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image">
+                <img src="./components/semantic/examples/images/wireframe/image.png">
+            </div>
+            <div class="content">
+                <a class="ui header" href="#link">Title 2</a>
+                <div class="description">
+                    <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris. Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image">
+                <img src="./components/semantic/examples/images/wireframe/image.png">
+            </div>
+            <div class="content">
+                <a class="ui header" href="#link">Title 3</a>
+                <div class="description">
+                    <p>Ut imperdiet dignissim feugiat. Phasellus tristique odio eu justo dapibus, nec rutrum ipsum luctus. Ut posuere nec tortor eu ullamcorper. <a href="#link">Etiam pellentesque</a> tincidunt tortor, non sagittis nibh pretium sit amet. Sed neque dolor, blandit eu ornare vel, lacinia porttitor nisi. Vestibulum sit amet diam rhoncus, consectetur enim sit amet, interdum mauris. Praesent feugiat finibus quam, porttitor varius est egestas id.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+<script type="text/x-handlebars" data-template-name="login">
     <div class="ui page grid">
-        <div class="center aligned column">
-            <div class="introduction">
-                <h1 class="ui inverted header">
-                    <span class="library">Haroo-kit</span>
-                    <span class="text">web presenter for the haroonote.</span>
-                </h1>
-                <a class="ui black version label transition visible" href="">0.0.1</a>
-            </div>
-        </div>
-    </div>
-</div>
+        <div class="two column computer only"></div>
+        <div class="center aligned sixteen wide column">
+            <div class="ui form">
+                <h2 class="ui dividing header">Account Info</h2>
 
-<div class="ui page grid">
-    <div class="two column computer only"></div>
-    <div class="center aligned sixteen wide column">
-        <div class="ui form">
-            <h2 class="ui dividing header">Account Info</h2>
+                <div class="two fields">
+                    <div class="required field">
+                        <label>Username</label>
 
-            <div class="two fields">
-                <div class="required field">
-                    <label>Username</label>
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Username">
+                            <i class="user icon"></i>
+                        </div>
+                    </div>
+                    <div class="required field">
+                        <label>Password</label>
 
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Username">
-                        <i class="user icon"></i>
+                        <div class="ui icon input">
+                            <input type="password" placeholder="Password">
+                            <i class="lock icon"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="required field">
-                    <label>Password</label>
-
-                    <div class="ui icon input">
-                        <input type="password" placeholder="Password">
-                        <i class="lock icon"></i>
-                    </div>
+                <div class="ui error message">
+                    <div class="header">We noticed some issues</div>
                 </div>
+                <button class="ui submit button">Login</button>
             </div>
-<!--
-            <div class="field">
-                <div class="ui checkbox">
-                    <input type="checkbox" name="hot-deals">
-                    <label>I agree to the <a href="#">Terms of Service</a>.</label>
-                </div>
-            </div>
--->
-            <div class="ui error message">
-                <div class="header">We noticed some issues</div>
-            </div>
-            <button class="ui submit button">Login</button>
         </div>
+        <div class="two column computer only"></div>
     </div>
-    <div class="two column computer only"></div>
-</div>
+
+</script>
+
 <script src="components/jquery/dist/jquery.min.js"></script>
+<script src="components/handlebars/handlebars.min.js"></script>
+<script src="components/ember/ember.min.js"></script>
 <script src="components/semantic/dist/semantic.min.js"></script>
+<script src="script/app.js"></script>
 </body>
 </html>
