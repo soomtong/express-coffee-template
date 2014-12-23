@@ -9,10 +9,17 @@
 <body>
 
 <script type="text/x-handlebars">
-    <div>
-        {{outlet}}
-    </div>
+    <p>{{#link-to 'index'}}index (this page){{/link-to}}</p>
+    <p>{{#link-to 'articles'}}article list{{/link-to}}</p>
+    {{ outlet login }}
+    {{outlet}}
 </script>
+
+<script type="text/x-handlebars" data-template-name="index">
+    <p>This is index page</p>
+    <p>{{ title }}</p>
+</script>
+
 <script type="text/x-handlebars" data-template-name="masthead">
     <div class="masthead">
         <div class="ui page grid">
@@ -22,13 +29,18 @@
                         <span class="library">Haroo-kit</span>
                         <span class="text">web presenter for the haroonote.</span>
                     </h1>
-                    <a class="ui black version label transition visible" href="">0.0.1</a>
+                    <a class="ui black version label transition visible" href="">{{ version }}</a>
                 </div>
             </div>
         </div>
     </div>
 </script>
+
+
 <script type="text/x-handlebars" data-template-name="articles">
+    <p>
+        <strong>is Login</strong>: {{isLogin}}
+    </p>
 
     <div class="ui very relaxed items">
         <div class="item">
@@ -102,7 +114,8 @@
 
 <script src="components/jquery/dist/jquery.min.js"></script>
 <script src="components/handlebars/handlebars.min.js"></script>
-<script src="components/ember/ember.min.js"></script>
+<script src="components/ember/ember.js"></script>
+<!--<script src="components/ember-data/ember-data.js"></script>-->
 <script src="components/semantic/dist/semantic.min.js"></script>
 <script src="script/app.js"></script>
 </body>
