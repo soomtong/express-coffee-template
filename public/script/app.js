@@ -29,6 +29,20 @@ Harookit.Article.FIXTURES = [{
 }];
 */
 
+Harookit.LoginView = Ember.View.extend({
+    templateName: 'login',
+
+    firstName: "Albert",
+    lastName: "Hofmann"
+});
+
+Harookit.InfoView = Ember.View.extend({
+    templateName: 'info',
+
+    posts: 25,
+    hobbies: "Riding bicycles"
+});
+
 Harookit.Router.map(function() {
     this.route("masthead", { path: "/head" });
     this.route("articles", { path: "/articles" });

@@ -9,15 +9,20 @@
 <body>
 
 <script type="text/x-handlebars">
+    {{#if person}}
+    <p>Welcome back, <b>{{person.firstName}} {{person.lastName}}</b>!</p>
+    {{else}}
+    <p>Please log in.</p>
+    {{/if}}
     <p>{{#link-to 'index'}}index (this page){{/link-to}}</p>
     <p>{{#link-to 'articles'}}article list{{/link-to}}</p>
-    {{ outlet login }}
     {{outlet}}
 </script>
 
 <script type="text/x-handlebars" data-template-name="index">
     <p>This is index page</p>
     <p>{{ title }}</p>
+    <p>My new car is {{color}}.</p>
 </script>
 
 <script type="text/x-handlebars" data-template-name="masthead">
@@ -74,15 +79,18 @@
             </div>
         </div>
     </div>
-
 </script>
+
 <script type="text/x-handlebars" data-template-name="login">
     <div class="ui page grid">
         <div class="two column computer only"></div>
         <div class="center aligned sixteen wide column">
             <div class="ui form">
                 <h2 class="ui dividing header">Account Info</h2>
-
+                <p>
+                    User: {{view.firstName}} {{view.lastName}}
+                    {{view "info"}}
+                </p>
                 <div class="two fields">
                     <div class="required field">
                         <label>Username</label>
@@ -109,7 +117,12 @@
         </div>
         <div class="two column computer only"></div>
     </div>
+</script>
 
+<script type="text/x-handlebars" data-template-name="info">
+    <b>Posts:</b>
+    <br>
+    <b>Hobbies:</b>
 </script>
 
 <script src="components/jquery/dist/jquery.min.js"></script>
