@@ -9,15 +9,10 @@ custom haroo cloud platform for your business
 
 ### development
 
-coffee app.coffee
-nodemon app.coffee
-
-or
-
-cake build
-cake run
+- gulp watch
+- nodemon app.js
 
 ### production
 
-cake build
-pm2 start harookit.js
+- gulp build
+- pm2 start harookit.js
