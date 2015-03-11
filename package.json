@@ -1,7 +1,7 @@
 {
   "name": "haroo-kit",
-  "version": "0.0.2",
-  "description": "web publish tool for haroonote",
+  "version": "0.0.1",
+  "description": "custom haroo-cloud platform",
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
@@ -11,7 +11,7 @@
     "url": "https://github.com/soomtong/haroo-kit.git"
   },
   "keywords": [
-    "haroonote"
+    "markdown"
   ],
   "author": "soomtong@gmail.com",
   "license": "Apache License",
@@ -20,12 +20,13 @@
   },
   "homepage": "https://github.com/soomtong/haroo-kit",
   "dependencies": {
-    "nedb": "^1.0.0",
-    "restify": "^2.8.4",
-    "socket.io": "^1.2.1"
+    "express": "^4.12.2"
   },
   "devDependencies": {
-    "mocha": "^2.0.1",
-    "should": "^4.3.1"
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-less": "^3.0.1",
+    "gulp-uglify": "^1.1.0"
   }
 }

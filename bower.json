@@ -15,8 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "ember": "~1.9.0",
-    "semantic": "~1.2.0",
-    "ember-data": "~0.0.14"
+    "fontawesome": "~4.3.0",
+    "jquery": "~2.1.3"
   }
 }
