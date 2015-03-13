@@ -1,6 +1,5 @@
 {
 	"ignore": [
-        "*.coffee",
         "*.less",
 		"*.test.js",
 		"fixtures/*",
