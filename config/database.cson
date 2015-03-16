@@ -1,0 +1,6 @@
+# Comments!!!
+mysql: [
+  host: 'localhost'
+  port: 2345
+  auth: ['admin', 'password']
+]

@@ -1,3 +1,9 @@
+cson = require 'cson'
+
+database = cson.load('./config/database.cson')
+
+console.log database
+
 production =
   port: 3000
   database:

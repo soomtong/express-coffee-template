@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/soomtong/haroo-kit",
   "dependencies": {
+    "cson": "^3.0.1",
     "express": "^4.12.2"
   },
   "devDependencies": {
