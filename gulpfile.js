@@ -25,7 +25,7 @@ gulp.task('client', function() {
 });
 
 gulp.task('script', function () {
-    gulp.src(['./public/components/jquery/dist/jquery.min.js', './public/kube/js/kube.min.js', './public/app.min.js'])
+    gulp.src(['./public/components/jquery/dist/jquery.min.js', './public/components/kube/js/kube.min.js', './public/app.min.js'])
         .pipe(concat('app.pack.js'))
         .pipe(gulp.dest('public/'))
 });
@@ -39,7 +39,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('style', function () {
-    gulp.src(['./public/components/fontawesome/css/font-awesome.min.css', './public/kube/css/kube.min.css', './public/app.min.css'])
+    gulp.src(['./public/components/fontawesome/css/font-awesome.min.css', './public/components/kube/css/kube.min.css', './public/app.min.css'])
         .pipe(concat('app.pack.css'))
         .pipe(gulp.dest('public'))
 });
