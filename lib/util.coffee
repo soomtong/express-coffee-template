@@ -1,18 +1,12 @@
-# ANSI Terminal Colors
-bold  = '\x1B[0;1m'
-red   = '\x1B[0;31m'
-green = '\x1B[0;32m'
-reset = '\x1B[0m'
+util = require 'util'
 
-log = (message, color, explanation) ->
-  console.log color + message + reset + ' ' + (explanation or '')
+color =
+  bold  : '\x1B[0;1m'
+  red   : '\x1B[0;31m'
+  green : '\x1B[0;32m'
+  reset : '\x1B[0m'
 
 module.exports = {
-  log
-  using: {
-    bold
-    red
-    green
-    reset
-  }
+  log: (message, explanation) -> console.log color.reset + message + color.red + ' ' + (explanation or '') + color.reset
+  inspect: util.inspect
 }

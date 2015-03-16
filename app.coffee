@@ -1,14 +1,11 @@
-path = require 'path'
-express = require 'express'
+harookit =
+  mode: process.env['NODE_ENV'] or 'development'
 
+init = require './lib/init'
 util = require './lib/util'
-route = require './lib/route'
 
-app = express()
-
-app.use(route)
-
-app.listen 3000, ->
-  util.log __dirname, util.using.green
-  util.log path.dirname(__dirname), util.using.bold
-  util.log "start app...", util.using.bold, "listen port from 3000"
+init.run(harookit, (server) ->
+  server.listen(server.config['port'], ->
+    util.log "Start Server", "Listening on #{server.config['port']} Press CTRL-C to stop server."
+  )
+)
