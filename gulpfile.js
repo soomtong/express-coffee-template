@@ -51,6 +51,8 @@ gulp.task('font', function () {
 
 gulp.task('test', ['greet']);
 
+gulp.task('run', ['client', 'less', 'script', 'style']);
+
 gulp.task('build', ['server', 'client', 'script', 'less', 'style']);
 
 gulp.task('default', ['test', 'build', 'font']);
